@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registered Students</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Registered Students</h1>
+        <!-- Navigation Bar -->
+        <nav>
+            <a href="index.html">Home</a>
+        </nav>
+    </header>
+    
+    <!-- Section to Display Registered Students -->
+    <section class="display-section">
+        <h2>Student List</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Student ID</th>
+                    <th>Email</th>
+                    <th>Contact No</th>
+                </tr>
+            </thead>
+            <tbody id="studentTableBody"></tbody> <!-- Table Body to Display Student Records -->
+        </table>
+    </section>
+
+    <!-- JavaScript for Loading Student Data from Local Storage -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const tableBody = document.getElementById("studentTableBody");
+            const students = JSON.parse(localStorage.getItem("students")) || []; // Retrieve stored students from local storage
+
+            // Function to Render Student Data in Table
+            function renderTable() {
+                tableBody.innerHTML = "";
+                students.forEach(student => {
+                    const row = document.createElement("tr");
+                    row.innerHTML = `
+                        <td>${student.name}</td>
+                        <td>${student.id}</td>
+                        <td>${student.email}</td>
+                        <td>${student.contact}</td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            }
+            
+            renderTable(); // Call function to populate table with student data
+        });
+    </script>
+</body>
+</html>

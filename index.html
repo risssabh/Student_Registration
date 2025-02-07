@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Student Registration System</h1>
+        <p>Register, Edit, and Manage Student Records Efficiently</p>
+    </header>
+    
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="students.html">View Students</a>
+    </nav>
+    
+    <!-- Student Registration Form -->
+    <section class="form-section">
+        <h2>Register a Student</h2>
+        <form id="studentForm">
+            <label for="studentName">Student Name:</label>
+            <input type="text" id="studentName" required placeholder="Enter student name">
+            
+            <label for="studentID">Student ID:</label>
+            <input type="number" id="studentID" required placeholder="Enter student ID">
+            
+            <label for="email">Email ID:</label>
+            <input type="email" id="email" required placeholder="Enter email ID">
+            
+            <label for="contactNo">Contact No:</label>
+            <input type="number" id="contactNo" required placeholder="Enter contact number">
+            
+            <button type="submit">Register</button>
+        </form>
+    </section>
+    
+    <!-- Display Registered Students -->
+    <section class="display-section">
+        <h2>Registered Students</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Student ID</th>
+                    <th>Email</th>
+                    <th>Contact No</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="studentTableBody">
+                <!-- Student records will be dynamically added here -->
+            </tbody>
+        </table>
+    </section>
+    
+    <!-- JavaScript File -->
+    <script src="script.js"></script>
+</body>
+</html>
